@@ -1,16 +1,17 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    for i in range(0, len(arr) - 1):  # go thru array to last item
+        cur_index = i  # first element current default smallest
+        smallest_index = cur_index  # smallest element
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
+        for j in range(i+1, len(arr)):  # all elements to right of the position from cur_index
+            if arr[cur_index] > arr[j]:  # if element j is < than current element
+                smallest_index = j  # new smallest is j
+        # swap them
+                arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
@@ -18,9 +19,9 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
-
+    pass
     return arr
+
 
 '''
 STRETCH: implement the Counting Sort function below
@@ -39,8 +40,23 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
 
-
     return arr
+
+
+
+#Monday practice
+arr = [85, 46, 27, 81, 94, 9, 27, 38, 43, 99, 37, 63, 31, 42, 14]
+
+
+def multipleOfThree(arr):
+    for num in arr:
+        if num % 3 == 0:
+            print(num)
+
+
+multipleOfThree(arr)
