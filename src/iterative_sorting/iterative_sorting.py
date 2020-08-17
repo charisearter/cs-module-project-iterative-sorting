@@ -18,8 +18,14 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-    pass
+    # for x in range() -> arrange backwards (start at last element, go to 0 index element, in steps of -1 (decrementing steps))
+    for x in range(len(arr)-1, 0, -1):
+        for y in range(x):  # each element in array to end of x
+            if arr[y] > arr[y + 1]:  # if element is greater than next element
+                temp = arr[y]  # current element is set to temp
+                arr[y] = arr[y+1]  # current element is now next element
+                arr[y+1] = temp  # next element is now temp
+                # keeps going until end of array
     return arr
 
 
@@ -48,8 +54,7 @@ def counting_sort(arr, maximum=None):
     return arr
 
 
-
-#Monday practice
+# Monday practice
 arr = [85, 46, 27, 81, 94, 9, 27, 38, 43, 99, 37, 63, 31, 42, 14]
 
 
