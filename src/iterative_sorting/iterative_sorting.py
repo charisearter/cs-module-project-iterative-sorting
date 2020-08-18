@@ -50,6 +50,20 @@ What is the time and space complexity of the counting sort algorithm?
 
 def counting_sort(arr, maximum=None):
     # Your code here
+    # using dictionary because it uses key:values
+    counts = {}  # dictionary to story the number of occurences of each number in array
+    # traverse over list and increase the # of occurences for each number by +1
+    for num in arr:  # for each number in the array
+        if num not in counts:  # if the number isn't there already
+            counts[num] = 0  # start at 0 for num
+        counts[num] += 1  # add 1 to that num count
+    newList = []  # place for sorted nums
+    # for each num and count, sort the count items for each num
+    for num, count in sorted(counts.items()):
+        # for each element put in order by count / i does nothing / _ place holder, this is doing an iteration and the loop it is on doesn't matter so use _ .
+        for _ in range(count):
+            newList.append(num)  # add to newList
+            arr = newList  # the arr is now newlist
 
     return arr
 
@@ -57,11 +71,12 @@ def counting_sort(arr, maximum=None):
 # Monday practice
 arr = [85, 46, 27, 81, 94, 9, 27, 38, 43, 99, 37, 63, 31, 42, 14]
 
+print(counting_sort(arr))
 
-def multipleOfThree(arr):
-    for num in arr:
-        if num % 3 == 0:
-            print(num)
+# def multipleOfThree(arr):
+#     for num in arr:
+#         if num % 3 == 0:
+#             print(num)
 
 
-multipleOfThree(arr)
+# multipleOfThree(arr)
