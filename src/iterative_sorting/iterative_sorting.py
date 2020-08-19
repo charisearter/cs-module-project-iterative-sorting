@@ -47,7 +47,7 @@ buckets.
 What is the time and space complexity of the counting sort algorithm?
 '''
 
-
+#fix line 62 cannot use sorted after doing searching
 def counting_sort(arr, maximum=None):
     # Your code here
     # using dictionary because it uses key:values
